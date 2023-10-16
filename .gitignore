@@ -1,0 +1,9 @@
+.bazelbsp
+.bsp
+.idea
+bazel-bazel-scala-sandbox
+bazel-bin
+bazel-out
+bazel-testlogs
+
+projectview.bazelproject
