@@ -18,10 +18,26 @@ http_archive(
 )
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
-scala_config(scala_version = "2.13.12")
+scala_config(scala_version = "2.13.13")
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
-scala_repositories()
+scala_repositories(
+    overriden_artifacts = {
+        # Change both the artifact names and sha256s.
+        "io_bazel_rules_scala_scala_library": {
+            "artifact": "org.scala-lang:scala-library:{}".format("2.13.13"),
+            "sha256": "71853291f61bda32786a866533361cae474344f5b2772a379179b02112444ed3",
+        },
+        "io_bazel_rules_scala_scala_compiler": {
+            "artifact": "org.scala-lang:scala-compiler:{}".format("2.13.13"),
+            "sha256": "c5a14770370e73a69367b131da1533890200b1e2aa70643b73f9ff31ef2e69ec",
+        },
+        "io_bazel_rules_scala_scala_reflect": {
+            "artifact": "org.scala-lang:scala-reflect:{}".format("2.13.13"),
+            "sha256": "6a46ed9b333857e8b5ea668bb254ed8e47dacd1116bf53ade9467aa4ae8f1818",
+        },
+    },
+)
 
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 rules_proto_dependencies()
