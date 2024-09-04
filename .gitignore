@@ -5,5 +5,7 @@ bazel-bazel-scala-sandbox
 bazel-bin
 bazel-out
 bazel-testlogs
+.metals
+.vscode
 
 projectview.bazelproject
