@@ -19,17 +19,14 @@ maven.install(
 )
 use_repo(maven, "maven")
 
-bazel_dep(name = "aspect_bazel_lib", version = "2.9.1")
+bazel_dep(name = "rules_pkg", version = "1.0.1")
 bazel_dep(name = "rules_oci", version = "2.0.0")
 
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
     name = "java_temurin",
+    digest = "sha256:d3d8ae316273809f5ac37b4c9016a7b1b37e83555c1956b5f9fab3625d1a5de2",
     image = "eclipse-temurin",
-    platforms = [
-        "linux/amd64",
-        "linux/arm64/v8",
-    ],
     tag = "17.0.12_7-jre-noble",
 )
 use_repo(oci, "java_temurin")

@@ -1,6 +1,6 @@
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_binary")
-load("@aspect_bazel_lib//lib:tar.bzl", "tar")
 load("@rules_oci//oci:defs.bzl", "oci_image", "oci_load")
+load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 scala_binary(
     name = "runner",
@@ -9,7 +9,7 @@ scala_binary(
     deps = ["//src/main/scala/lib:greeting"],
 )
 
-tar(
+pkg_tar(
     name = "layer",
     srcs = [":runner_deploy.jar"],
 )
