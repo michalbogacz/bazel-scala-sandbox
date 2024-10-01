@@ -7,5 +7,5 @@ bazel-out
 bazel-testlogs
 .metals
 .vscode
-
+.ijwb
 projectview.bazelproject
