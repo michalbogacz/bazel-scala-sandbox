@@ -9,3 +9,4 @@ bazel-testlogs
 .vscode
 .ijwb
 projectview.bazelproject
+.DS_Store

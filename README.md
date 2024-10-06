@@ -2,6 +2,12 @@
 
 Scala project build by Bazel
 
+## Dependencies
+After changing dependencies, make sure to run
+```bash
+bazel run @unpinned_maven//:pin
+```
+
 ## Docker image
 
 Build image
