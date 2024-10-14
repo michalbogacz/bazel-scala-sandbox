@@ -1,7 +1,7 @@
 package com.example
 
-import org.scalatest.funsuite.AnyFunSuite
 import lib.Greeting
+import org.scalatest.funsuite.AnyFunSuite
 
 class ExampleTest extends AnyFunSuite {
   test("example") {
