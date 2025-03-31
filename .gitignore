@@ -6,6 +6,7 @@ bazel-bin
 bazel-out
 bazel-testlogs
 .metals
+.scala-build
 .vscode
 .ijwb
 projectview.bazelproject
