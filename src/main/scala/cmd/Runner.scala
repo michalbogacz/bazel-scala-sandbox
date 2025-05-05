@@ -4,5 +4,5 @@ import lib.Greeting
 
 object Runner {
   def main(args: Array[String]): Unit =
-    println(Greeting.createHiMessage("Alex"))
+    println(Greeting.createHiMessage("from Scala Service!"))
 }
