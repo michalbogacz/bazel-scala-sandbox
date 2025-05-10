@@ -1,10 +1,5 @@
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
-bazel_dep(name = "rules_scala")
-git_override(
-    module_name = "rules_scala",
-    commit = "e2575a30a2eb3946731ac9a8e922c87fcd7dbee4",
-    remote = "https://github.com/bazel-contrib/rules_scala",
-)
+bazel_dep(name = "rules_scala", version = "7.0.0")
 
 register_toolchains("//:custom_scala_toolchain")
 

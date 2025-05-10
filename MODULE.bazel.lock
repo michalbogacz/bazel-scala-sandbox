@@ -149,6 +149,8 @@
     "https://bcr.bazel.build/modules/rules_python/0.40.0/MODULE.bazel": "9d1a3cd88ed7d8e39583d9ffe56ae8a244f67783ae89b60caafc9f5cf318ada7",
     "https://bcr.bazel.build/modules/rules_python/0.40.0/source.json": "939d4bd2e3110f27bfb360292986bb79fd8dcefb874358ccd6cdaa7bda029320",
     "https://bcr.bazel.build/modules/rules_rust/0.45.1/MODULE.bazel": "a69d0db3a958fab2c6520961e1b2287afcc8b36690fd31bbc4f6f7391397150d",
+    "https://bcr.bazel.build/modules/rules_scala/7.0.0/MODULE.bazel": "da994e1f25d3f9dd3506c487bb6a0a0e74f51e1871a799b2c672e409292000fc",
+    "https://bcr.bazel.build/modules/rules_scala/7.0.0/source.json": "9b545e417cf9f16ac562416b11088851de97ae249262e5b6538a657f099b47e8",
     "https://bcr.bazel.build/modules/rules_shell/0.2.0/MODULE.bazel": "fda8a652ab3c7d8fee214de05e7a9916d8b28082234e8d2c0094505c5268ed3c",
     "https://bcr.bazel.build/modules/rules_shell/0.3.0/MODULE.bazel": "de4402cd12f4cc8fda2354fce179fdb068c0b9ca1ec2d2b17b3e21b24c1a937b",
     "https://bcr.bazel.build/modules/rules_shell/0.3.0/source.json": "c55ed591aa5009401ddf80ded9762ac32c358d2517ee7820be981e2de9756cf3",
@@ -3685,7 +3687,7 @@
     "@@rules_scala+//scala/extensions:config.bzl%scala_config": {
       "general": {
         "bzlTransitiveDigest": "TYEDBdoN7s4wE8er7JwzFt7+3iw57BHsTSLyWmxbgZo=",
-        "usagesDigest": "N5n5SZPDrlmzarXVGu9/nA49ibnzgUFx0hmqY0Hdr20=",
+        "usagesDigest": "HEke9UxxWLVbPuwzNBZBXJtzRp8DU/9qE7/BSyVUyBQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {
@@ -3709,8 +3711,8 @@
     },
     "@@rules_scala+//scala/extensions:deps.bzl%scala_deps": {
       "general": {
-        "bzlTransitiveDigest": "9OoAK9ypxl3zPCRHhPzGSZd2yssMS1JKqPbe6Oejffs=",
-        "usagesDigest": "J51Lwy0Tz34Qigyp65ShrSAcuWzkQPsSCQ/GonzCOZE=",
+        "bzlTransitiveDigest": "8MkEvBB2hqizOLT0F+zSUuQx00f0bOSEriOLCxG2McQ=",
+        "usagesDigest": "ZJGXaqq71BFGeWhL1mV6UK1VtHvgK2ddUpydFZb8x2I=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4724,7 +4726,7 @@
             }
           },
           "rules_scala_toolchains": {
-            "repoRuleId": "@@rules_scala+//scala:toolchains_repo.bzl%_scala_toolchains_repo",
+            "repoRuleId": "@@rules_scala+//scala:toolchains_repo.bzl%scala_toolchains_repo",
             "attributes": {
               "scalatest": true,
               "junit": false,
@@ -4732,7 +4734,9 @@
               "scalafmt": false,
               "scalafmt_default_config": "@@rules_scala+//:.scalafmt.conf",
               "scala_proto": false,
-              "scala_proto_options": [],
+              "scala_proto_options": [
+                "grpc"
+              ],
               "jmh": false,
               "twitter_scrooge": false,
               "twitter_scrooge_deps": {}
@@ -4741,9 +4745,79 @@
         },
         "recordedRepoMappingEntries": [
           [
+            "bazel_features+",
+            "bazel_features_globals",
+            "bazel_features++version_extension+bazel_features_globals"
+          ],
+          [
+            "bazel_features+",
+            "bazel_features_version",
+            "bazel_features++version_extension+bazel_features_version"
+          ],
+          [
+            "protobuf+",
+            "proto_bazel_features",
+            "bazel_features+"
+          ],
+          [
+            "rules_cc+",
+            "bazel_tools",
+            "bazel_tools"
+          ],
+          [
+            "rules_java+",
+            "bazel_skylib",
+            "bazel_skylib+"
+          ],
+          [
+            "rules_java+",
+            "bazel_tools",
+            "bazel_tools"
+          ],
+          [
+            "rules_java+",
+            "com_google_protobuf",
+            "protobuf+"
+          ],
+          [
+            "rules_java+",
+            "compatibility_proxy",
+            "rules_java++compatibility_proxy+compatibility_proxy"
+          ],
+          [
+            "rules_java+",
+            "rules_cc",
+            "rules_cc+"
+          ],
+          [
+            "rules_java++compatibility_proxy+compatibility_proxy",
+            "rules_java",
+            "rules_java+"
+          ],
+          [
+            "rules_proto+",
+            "com_google_protobuf",
+            "protobuf+"
+          ],
+          [
             "rules_scala+",
             "bazel_tools",
             "bazel_tools"
+          ],
+          [
+            "rules_scala+",
+            "com_google_protobuf",
+            "protobuf+"
+          ],
+          [
+            "rules_scala+",
+            "rules_java",
+            "rules_java+"
+          ],
+          [
+            "rules_scala+",
+            "rules_proto",
+            "rules_proto+"
           ],
           [
             "rules_scala+",
