@@ -1,4 +1,4 @@
-bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "bazel_skylib", version = "1.8.1")
 bazel_dep(name = "rules_scala", version = "7.0.0")
 
 register_toolchains("//:custom_scala_toolchain")
@@ -41,7 +41,7 @@ bazel_dep(name = "rules_jvm_external", version = "6.7")
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "org.scala-lang.modules:scala-xml_2.13:2.3.0",
+        "org.scala-lang.modules:scala-xml_2.13:2.4.0",
     ],
     lock_file = "//:maven_install.json",
     repositories = [
