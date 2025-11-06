@@ -5,6 +5,5 @@ scala_test(
     srcs = glob(["**/*.scala"]),
     deps = [
         "//src/main/scala/lib:greeting",
-        "@maven//:org_scala_lang_modules_scala_xml_2_13",
     ],
 )
